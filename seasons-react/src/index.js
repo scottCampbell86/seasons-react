@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SeasonDisplay from './SeasonDisplay'
 
 class App extends React.Component {
 
@@ -18,10 +19,15 @@ class App extends React.Component {
   }
 
   render () {
-    //condiysh rendering of <div>stateContent</div>
+    //condiysh rendering:
+
+      //if there is no lat property
     if (this.state.errorMessage && !this.state.lat) return <div>Error: { this.state.errorMessage }</div>
-    if (!this.state.errorMessage && this.state.lat) return <div>Latitude: { this.state.lat }</div> 
+      //if there is a lat property
+    if (!this.state.errorMessage && this.state.lat) return <SeasonDisplay lat={ this.state.lat }/>
+      //while we wait to see if there is, or is not, a lat property
     return <div>Loading!</div>
+    
   }
 }
 
