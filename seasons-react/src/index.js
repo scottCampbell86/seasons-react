@@ -20,7 +20,6 @@ class App extends React.Component {
 
   render () {
     //condiysh rendering:
-
       //if there is no lat property
     if (this.state.errorMessage && !this.state.lat) return <div>Error: { this.state.errorMessage }</div>
       //if there is a lat property
